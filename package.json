@@ -10,7 +10,7 @@
     "start": "node hello1-1.js"
   },
   "dependencies": {
-	"fs": ">=8.0.0"
+	"fs": ">=5.0.3"
   },
   "author": "",
   "license": "ISC"
