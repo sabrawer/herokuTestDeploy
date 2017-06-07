@@ -9,5 +9,6 @@ server.on('request',(req,res) => {
 	res.writeHead(200,{'content-type': 'text/plain'});
 	res.end("Hello world\n");
 });
-server.listen(8000);
-console.log('server listening on port 8000');
+let port = process.env.PORT || 8000;
+server.listen(port);
+console.log('server listening on port:' + port);
