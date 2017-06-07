@@ -2,11 +2,14 @@
   "name": "first-hello-world-brwr",
   "version": "1.0.0",
   "description": "first hello world in order to begin to learn heroku manual dep[loyment",
-  "main": "hello1.js",
+  "main": "hello1-1.js",
   "scripts": {
-    "test": "hello1.js",
-    "start": "node hello1.js"
+    "start": "node hello1-1.js"
+  },
+  "dependencies": {
+	"fs": ">=8.0.0"
   },
   "author": "",
   "license": "ISC"
 }
+
