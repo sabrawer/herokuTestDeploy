@@ -1,0 +1,12 @@
+{
+  "name": "first-hello-world-brwr",
+  "version": "1.0.0",
+  "description": "first hello world in order to begin to learn heroku manual dep[loyment",
+  "main": "hello1.js",
+  "scripts": {
+    "test": "hello1.js",
+    "start": "node hello1.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
