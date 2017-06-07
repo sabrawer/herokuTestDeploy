@@ -1,6 +1,5 @@
 /*
-The initial hellow world program, used for setting up
-heroku for manual configure and to work with github.
+This does fs.stat of a file in the master branch.
 */
 const fs = require('fs');
 const server = require('http').createServer();
