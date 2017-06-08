@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<style>
+
+.contain{
+	display: flex;
+	justify-content: flex-start;
+}
+
+.txt{
+	flex: 0 1 25px;
+}
+
+.area{
+	flex: 0 1 200px;
+}
+
+.button{
+	flex: 0 1 40px;
+	border: 1px solid green;
+	text-align: center;
+}
+
+.button:hover{
+	color:red;
+	cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+	
+<div class = "contain">
+	<p class = "txt">Key:&nbsp&nbsp&nbsp&nbsp</p>
+	<textarea class="area" id = "idKey"></textarea>
+</div>
+<br><br>
+
+<div class = "contain">
+	<p class = "txt">Value:&nbsp&nbsp</p>
+	<textarea class="area" id = "idValue"></textarea>
+</div>
+
+
+<div class="contain">
+	<p class="button" onclick="store()">store</p>
+	<p class="button" onclick="get()">get</p>
+	<p class="button" onclick="deletex()"> delete</p>
+</div>
+
+	
+	
+
+
+
+
+
+
+<script>
+
+"use strict"
+
+let ajaxDo;
+let keyElem = document.getElementById("idKey");
+let valElem = document.getElementById("idValue");
+
+
+function dummy(){
+	console.log("DUMMY");
+
+}
+
+function writeTextAreas(str){
+	valElem.value =  str;
+
+}
+
+function store(){
+	console.log("store");
+	let key = keyElem.value;
+	let val = valElem.value;
+	console.log(key);
+	if(! key) return;
+	if(key == "***") return;
+	let obj = {
+		mode: "sendQuery",
+		baseUrl:'127.0.0.1:8000',
+		route: '/store',
+		query: ( "key=" + key + "&" + "val=" + val ),
+		data: null,
+		callback: dummy,
+		functionData: null
+	};
+	ajaxDo(obj);
+}
+
+function get(){
+	console.log("get");
+	let key = keyElem.value;
+	console.log(key);
+	if(! key) return;
+	if(key == "***") return;
+	let obj = {
+		mode: "sendQuery",
+		baseUrl:'127.0.0.1:8000',
+		route: '/get',
+		query: ( "key=" + key),
+		data: null,
+		callback: writeTextAreas,
+		functionData: null
+	};
+	ajaxDo(obj);
+}
+
+function deletex(){
+	console.log("delete");
+	let key = keyElem.value;
+	console.log(key);
+	if(! key) return;
+	if(key == "***") return;
+	let obj = {
+		mode: "sendQuery",
+		baseUrl:'127.0.0.1:8000',
+		route: '/delete',
+		query: ( "key=" + key),
+		data: null,
+		callback: writeTextAreas,
+		functionData: null
+	};
+	ajaxDo(obj);
+
+	
+}
+
+
+
+
+AJAXMODULE1JS
+
+ajaxDo = getAjaxDo();
+
+
+
+
+
+
+
+</script>
+
+</body>
+
+</html>
