@@ -4,10 +4,10 @@
   "engines": {
     "node": "6.10.2"
   },
-  "description": "first hello world in order to begin to learn heroku manual dep[loyment",
-  "main": "hello1-1.js",
+  "description": "begin to learn heroku manual deployment",
+  "main": "forms3.js",
   "scripts": {
-    "start": "node hello1-1.js"
+    "start": "node forms3.js"
   },
   "author": "",
   "license": "ISC"
