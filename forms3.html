@@ -70,6 +70,8 @@
 let ajaxDo;
 let keyElem = document.getElementById("idKey");
 let valElem = document.getElementById("idValue");
+	
+let baseurl = 'first-hello-world-brwr.herokuapp.com';
 
 
 function dummy(){
@@ -91,7 +93,7 @@ function store(){
 	if(key == "***") return;
 	let obj = {
 		mode: "sendQuery",
-		baseUrl:'127.0.0.1:8000',
+		baseUrl:baseurl,
 		route: '/store',
 		query: ( "key=" + key + "&" + "val=" + val ),
 		data: null,
@@ -109,7 +111,7 @@ function get(){
 	if(key == "***") return;
 	let obj = {
 		mode: "sendQuery",
-		baseUrl:'127.0.0.1:8000',
+		baseUrl:baseurl,
 		route: '/get',
 		query: ( "key=" + key),
 		data: null,
@@ -127,7 +129,7 @@ function deletex(){
 	if(key == "***") return;
 	let obj = {
 		mode: "sendQuery",
-		baseUrl:'127.0.0.1:8000',
+		baseUrl:baseurl,
 		route: '/delete',
 		query: ( "key=" + key),
 		data: null,
