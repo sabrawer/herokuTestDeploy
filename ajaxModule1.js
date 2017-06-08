@@ -92,7 +92,7 @@ return function (obj){
     	} // function
 
 	let mode = obj.mode;
-	let url = "http://" + obj.baseUrl;
+	let url = "https://" + obj.baseUrl;
 	if(obj.route) url += obj.route;
 
 	//console.log(`MODE: ${mode}`);
